@@ -1,0 +1,9 @@
+<ng-template [ngIf]="contact">
+    <section class="contact-details">
+        <img [src]="contactImg" >
+        <h3>Name: {{contact.name}}</h3>
+        <h3>Phone: {{contact.phone}}</h3>
+        <h3>Email: {{contact.email}}</h3>
+        <a routerLink="/contact"><button>Back To Contacts</button></a>
+    </section>
+</ng-template>
