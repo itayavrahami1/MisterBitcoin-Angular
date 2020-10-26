@@ -1,4 +1,8 @@
-<contact-filter (onFilterChange)="handleFilterChange($event)"></contact-filter>
-<button [routerLink]="['/contact','edit']">Add Contact</button>
-<contact-list [contacts]="contacts" (onRemoveContact)="removeContact($event)"></contact-list>
-
+<section class="contact-action flex space-between align-center">
+    <contact-filter (onFilterChange)="handleFilterChange($event)"></contact-filter>
+    <button [routerLink]="['/contact','edit']">Add Contact</button>
+</section>
+<contact-list [contacts]="contacts" 
+(onRemoveContact)="removeContact($event)"
+(onEditContact)="editContact($event)"
+></contact-list>

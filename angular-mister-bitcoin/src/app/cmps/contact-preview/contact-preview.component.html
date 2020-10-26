@@ -1,9 +1,10 @@
 <section class="contact-preview" >
-    <section class="preiview-info" [routerLink]="['/contact',contact._id]">
+    <section class="preiview-info flex column sapce-around align-center" [routerLink]="['/contact',contact._id]">
         <img [src]="contactImg" height="75" width="75" />
         <h4>{{contact.name}}</h4>
     </section>
-    <section class="preview-btns">
-        <button (click)="onRemoveContact.emit(contact._id)">Remove</button>
+    <section class="preview-btns flex space-around">
+        <img src="../../../assets/imgs/delete.png" (click)="onRemoveContact.emit(contact._id)"/>
+        <img src="../../../assets/imgs/edit.png" (click)="onEditContact.emit(contact._id)"/>
     </section>
 </section>

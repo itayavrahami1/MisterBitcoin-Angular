@@ -1,0 +1,32 @@
+@import "../../../assets/setup/mixins";
+
+.contact-preview{
+
+    .preiview-info:hover{
+        cursor: pointer;
+    }
+
+    img {
+        width: initial;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    h4{
+        text-align: center;
+    }
+
+    .preview-btns{
+        img {
+            width: 30px
+        }
+
+        img:hover{
+            cursor: pointer;
+        }
+    }
+}
+
+.contact-preview:hover{
+    background-color: rgb(241, 241, 241);
+}

@@ -1,10 +1,13 @@
 <ng-template [ngIf]="contact">
     <section class="contact-details">
-        <img [src]="contactImg" >
+        <img [src]="contactImg">
         <h3>Name: {{contact.name}}</h3>
         <h3>Phone: {{contact.phone}}</h3>
         <h3>Email: {{contact.email}}</h3>
-        <button [routerLink]="['/contact/edit',contact._id]">Edit</button>
-        <a routerLink="/contact"><button>Back To Contacts</button></a>
+        <section class="details-btns flex align-center">
+            <img class="back-btn" src="../../../assets/imgs/back.png" (click)="onBack()" />
+            <img src="../../../assets/imgs/edit.png" [routerLink]="['/contact/edit',contact._id]"/>
+            <img src="../../../assets/imgs/delete.png" (click)="onRemoveContact(contact._id)"/>
+        </section>
     </section>
 </ng-template>

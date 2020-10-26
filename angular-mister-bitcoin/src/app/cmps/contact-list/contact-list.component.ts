@@ -9,6 +9,7 @@ import { Contact } from 'src/app/models/contact.model';
 export class ContactListComponent implements OnInit {
   @Input() contacts: Contact[]
   @Output() onRemoveContact = new EventEmitter()
+  @Output() onEditContact = new EventEmitter()
 
   constructor() { }
 

@@ -181,7 +181,7 @@ export class ContactService {
   private _addContact(contact: Contact) {
     //mock the server work
     const newContact = new Contact(undefined, contact.name, contact.email, contact.phone);
-    newContact.setId();
+    // newContact.setId();
     const contacts = [...this._contacts$.getValue(), newContact]
     this._contacts$.next(this._sort(contacts))
   }

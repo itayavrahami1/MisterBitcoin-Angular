@@ -1,0 +1,15 @@
+.contact-details{
+    img{
+        width: initial;
+    }
+
+    .details-btns{
+        img {
+            width: 30px;
+        }
+
+        img:not(:first-child){
+            margin-inline-start: 10px;
+        }
+    }
+}

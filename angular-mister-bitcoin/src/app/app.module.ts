@@ -13,6 +13,8 @@ import { ContactFilterComponent } from './cmps/contact-filter/contact-filter.com
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { EditContactComponent } from './pages/edit-contact/edit-contact.component';
 import { ContactFormComponent } from './cmps/contact-form/contact-form.component';
+import { FooterComponent } from './cmps/footer/footer.component';
+import { UserHomeComponent } from './cmps/user/user-home/user-home.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { ContactFormComponent } from './cmps/contact-form/contact-form.component
     ContactFilterComponent,
     EditContactComponent,
     ContactFormComponent,
+    FooterComponent,
+    UserHomeComponent,
   ],
   imports: [
     BrowserModule,

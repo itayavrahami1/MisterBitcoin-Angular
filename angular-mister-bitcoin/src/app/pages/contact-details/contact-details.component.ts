@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { ContactService } from 'src/services/contact.service';
@@ -15,20 +15,29 @@ export class ContactDetailsComponent implements OnInit {
   contactImg: String = '';
   constructor(
     private contactService: ContactService,
-    private route: ActivatedRoute,
+    private activatedRoute: ActivatedRoute,
+    private route: Router,
     private location: Location) { }
 
   ngOnInit(): void {
-
     // // FOR LISTENING TO ROUTE CHANGES CONTINOUSILY - FOR PAGINATION
-    // this.route.paramMap.subscribe(params => {
+    // this.activatedRoute.paramMap.subscribe(params => {
     //   const contactId = params.get('id')
     //   this.contactService.getContactById(contactId)
     //     .subscribe(contact => this.contact = contact)
     // })
-    const contactId = this.route.snapshot.paramMap.get('id');
+    const contactId = this.activatedRoute.snapshot.paramMap.get('id');
     this.contactImg = `https://robohash.org/${contactId}`
     this.contactService.getContactById(contactId).subscribe(contact => this.contact = contact)
+  }
+
+  onBack(){
+    this.location.back()
+  }
+
+  onRemoveContact(contactId){
+    this.contactService.removeContact(contactId)
+    this.route.navigate(['/contact'])
   }
 
 }

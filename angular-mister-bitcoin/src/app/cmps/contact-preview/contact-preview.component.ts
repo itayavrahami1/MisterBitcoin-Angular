@@ -9,6 +9,7 @@ import { Contact } from 'src/app/models/contact.model';
 export class ContactPreviewComponent implements OnInit {
   @Input() contact: Contact;
   @Output() onRemoveContact = new EventEmitter()
+  @Output() onEditContact = new EventEmitter()
   contactImg: String = ''
   constructor() { }
 
