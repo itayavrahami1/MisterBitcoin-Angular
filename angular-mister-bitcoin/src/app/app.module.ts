@@ -9,6 +9,10 @@ import { ContactAppComponent } from './pages/contact-app/contact-app.component';
 import { ContactListComponent } from './cmps/contact-list/contact-list.component';
 import { ContactPreviewComponent } from './cmps/contact-preview/contact-preview.component';
 import { ContactDetailsComponent } from './pages/contact-details/contact-details.component';
+import { ContactFilterComponent } from './cmps/contact-filter/contact-filter.component';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { EditContactComponent } from './pages/edit-contact/edit-contact.component';
+import { ContactFormComponent } from './cmps/contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +21,17 @@ import { ContactDetailsComponent } from './pages/contact-details/contact-details
     ContactAppComponent,
     ContactListComponent,
     ContactPreviewComponent,
-    ContactDetailsComponent
+    ContactDetailsComponent,
+    ContactFilterComponent,
+    EditContactComponent,
+    ContactFormComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

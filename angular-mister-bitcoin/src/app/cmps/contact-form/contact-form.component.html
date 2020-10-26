@@ -1,0 +1,23 @@
+<form [formGroup]="contactForm" (ngSubmit)="saveForm(contactForm)">
+    <label>Name</label>
+    <input type="text" formControlName="name">
+    <small *ngIf="contactForm.controls.name.touched && !contactForm.controls.name.valid">
+        Name is required AND can't start with a number.
+    </small>
+    <label>phone</label>
+    <input type="text" formControlName="phone">
+    <small *ngIf="contactForm.controls.phone.touched && !contactForm.controls.phone.valid">
+        invalid phone number
+    </small>
+    <label>email</label>
+    <input type="text" formControlName="email">
+    <small *ngIf="contactForm.controls.email.touched && !contactForm.controls.email.valid">
+        invalid email
+    </small>
+    <button [disabled]="!contactForm.valid">Save</button>
+    <div>
+        <div>contactForm details:-</div>
+        <pre>Is myForm valid?: <br>{{contactForm.valid | json}}</pre>
+        <pre>form value: <br>{{contactForm.value | json}}</pre>
+    </div>
+</form>

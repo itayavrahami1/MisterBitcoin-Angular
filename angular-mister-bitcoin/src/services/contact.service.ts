@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject, throwError, of } from 'rxjs';
 import { Contact } from '../app/models/contact.model';
 import { HttpClient } from '@angular/common/http';
-import { retry, catchError, map, filter } from 'rxjs/operators';
+import { retry, catchError, map } from 'rxjs/operators';
 
 // const CONTACTS = [
 //   {
@@ -138,9 +138,6 @@ export class ContactService {
   public query(filterBy = { name: '' }): void {
     this.httpService.get<Contact[]>(this.BASE_URL)
       .pipe(
-        // filter(contact => {
-        //    contact.name.toLowerCase().includes(filterBy.name.toLowerCase());
-        // })
         map(contacts => {
           return contacts.filter(({ name }) => {
             return name.toLowerCase().includes(filterBy.name.toLowerCase());
@@ -159,16 +156,19 @@ export class ContactService {
       );
   }
 
-  public deleteContact(id: string) {
-    //mock the server work
-    const contacts = this._contacts$.getValue().filter(contact => contact._id !== id)
-
-    // change the observable data in the service - let all the subscribers know
-    this._contacts$.next(contacts)
+  public removeContact(id: string): void {
+    this.httpService.delete<Contact[]>(this.BASE_URL + `/${id}`)
+      .subscribe(res => {
+        this.query()
+      })
   }
 
   public saveContact(contact: Contact) {
     return contact._id ? this._updateContact(contact) : this._addContact(contact)
+  }
+
+  public getEmptyUser(){
+    return { name: '', email: '', phone: '' }
   }
 
   private _updateContact(contact: Contact) {

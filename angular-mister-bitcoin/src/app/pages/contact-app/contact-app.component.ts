@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Contact } from 'src/app/models/contact.model';
 import { ContactService } from 'src/services/contact.service';
@@ -9,7 +9,7 @@ import { ContactService } from 'src/services/contact.service';
   templateUrl: './contact-app.component.html',
   styleUrls: ['./contact-app.component.scss']
 })
-export class ContactAppComponent implements OnInit {
+export class ContactAppComponent implements OnInit,OnDestroy {
   subscription: Subscription
   contacts: Contact[] = []
 
@@ -20,6 +20,18 @@ export class ContactAppComponent implements OnInit {
     this.subscription = this.contactService.contacts$.subscribe(contacts => {
       this.contacts = contacts
     })
+  }
+
+  handleFilterChange(filterBy){
+    this.contactService.query(filterBy)
+  }
+
+  removeContact(contactId){
+    this.contactService.removeContact(contactId)    
+  }
+
+  ngOnDestroy(): void {
+    // TODO - UNSUBSCRIBE
   }
 
 }

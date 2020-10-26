@@ -1,6 +1,9 @@
-<a routerLink="/contact/{{contact._id}}">
-    <section class="contact-preview">
-        <img [src]="contactImg" height="75" width="75"/>
+<section class="contact-preview" >
+    <section class="preiview-info" [routerLink]="['/contact',contact._id]">
+        <img [src]="contactImg" height="75" width="75" />
         <h4>{{contact.name}}</h4>
     </section>
-</a>
+    <section class="preview-btns">
+        <button (click)="onRemoveContact.emit(contact._id)">Remove</button>
+    </section>
+</section>

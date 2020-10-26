@@ -19,6 +19,13 @@ export class ContactDetailsComponent implements OnInit {
     private location: Location) { }
 
   ngOnInit(): void {
+
+    // // FOR LISTENING TO ROUTE CHANGES CONTINOUSILY - FOR PAGINATION
+    // this.route.paramMap.subscribe(params => {
+    //   const contactId = params.get('id')
+    //   this.contactService.getContactById(contactId)
+    //     .subscribe(contact => this.contact = contact)
+    // })
     const contactId = this.route.snapshot.paramMap.get('id');
     this.contactImg = `https://robohash.org/${contactId}`
     this.contactService.getContactById(contactId).subscribe(contact => this.contact = contact)

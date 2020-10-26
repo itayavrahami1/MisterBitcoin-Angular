@@ -1,2 +1,4 @@
-<contact-list [contacts]="contacts"></contact-list>
+<contact-filter (onFilterChange)="handleFilterChange($event)"></contact-filter>
+<button [routerLink]="['/contact','edit']">Add Contact</button>
+<contact-list [contacts]="contacts" (onRemoveContact)="removeContact($event)"></contact-list>
 

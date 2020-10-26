@@ -4,6 +4,7 @@
         <h3>Name: {{contact.name}}</h3>
         <h3>Phone: {{contact.phone}}</h3>
         <h3>Email: {{contact.email}}</h3>
+        <button [routerLink]="['/contact/edit',contact._id]">Edit</button>
         <a routerLink="/contact"><button>Back To Contacts</button></a>
     </section>
 </ng-template>

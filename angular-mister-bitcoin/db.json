@@ -1,18 +1,6 @@
 {
   "contact": [
     {
-      "_id": "5a56640269f443a5d64b32ca",
-      "name": "Ochoa Hyde",
-      "email": "ochoahyde@renovize.com",
-      "phone": "+1 (968) 593-3824"
-    },
-    {
-      "_id": "5a5664025f6ae9aa24a99fde",
-      "name": "Hallie Mclean",
-      "email": "halliemclean@renovize.com",
-      "phone": "+1 (948) 464-2888"
-    },
-    {
       "_id": "5a56640252d6acddd183d319",
       "name": "Parsons Norris",
       "email": "parsonsnorris@renovize.com",
@@ -80,7 +68,6 @@
     },
     {
       "_id": "5a56640298ab77236845b82b",
-  
       "name": "Glenna Santana",
       "email": "glennasantana@renovize.com",
       "phone": "+1 (860) 467-2376"
