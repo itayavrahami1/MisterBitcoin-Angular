@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { AppHeaderComponent } from './cmps/app-header/app-header.component';
 import { ContactAppComponent } from './pages/contact-app/contact-app.component';
@@ -14,7 +14,8 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { EditContactComponent } from './pages/edit-contact/edit-contact.component';
 import { ContactFormComponent } from './cmps/contact-form/contact-form.component';
 import { FooterComponent } from './cmps/footer/footer.component';
-import { UserHomeComponent } from './cmps/user/user-home/user-home.component';
+import { UserHomeComponent } from './pages/user-home/user-home.component';
+import { UserMsgComponent } from './cmps/system/user-msg/user-msg.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { UserHomeComponent } from './cmps/user/user-home/user-home.component';
     ContactFormComponent,
     FooterComponent,
     UserHomeComponent,
+    UserMsgComponent,
   ],
   imports: [
     BrowserModule,

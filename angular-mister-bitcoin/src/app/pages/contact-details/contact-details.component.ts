@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { ContactService } from 'src/services/contact.service';
+import { ContactService } from 'src/services/contact/contact.service';
 import { Contact } from 'src/app/models/contact.model';
 
 @Component({

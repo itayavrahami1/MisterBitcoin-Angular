@@ -2,7 +2,7 @@ import { Component, OnInit,OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Contact } from 'src/app/models/contact.model';
-import { ContactService } from 'src/services/contact.service';
+import { ContactService } from 'src/services/contact/contact.service';
 
 Router
 @Component({
@@ -33,12 +33,11 @@ export class ContactAppComponent implements OnInit,OnDestroy {
   }
 
   editContact(contactId){
-    console.log('edit contact', contactId);
     this.router.navigate([`/contact/edit/${contactId}`])
   }
 
   ngOnDestroy(): void {
-    // TODO - UNSUBSCRIBE
+    this.subscription.unsubscribe()
   }
 
 }

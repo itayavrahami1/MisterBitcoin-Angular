@@ -1,3 +1,3 @@
 <ng-template [ngIf]="contact"]>
-    <contact-form [contact]="contact"></contact-form>
+    <contact-form [contact]="contact" (onSaveForm)=saveContact($event)></contact-form>
 </ng-template>

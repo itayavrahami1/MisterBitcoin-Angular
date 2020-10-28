@@ -1,0 +1,16 @@
+.user-home{
+    min-height: 80vh;
+    .user-avatar{
+        width: 200px;
+    }
+    img {
+        width: initial;
+    }
+
+   .user-moves{
+       text-align: center;
+       font-size: 24px;
+       font-weight: bold;
+       margin: 15px 0;
+   }
+}

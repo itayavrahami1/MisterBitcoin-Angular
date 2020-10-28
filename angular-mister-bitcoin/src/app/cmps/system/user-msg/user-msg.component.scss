@@ -1,0 +1,22 @@
+.user-msg {  
+    padding: 10px;
+    color: white;
+    box-shadow: 0 2px 2px 0px black;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    min-width: 35%;
+    font-family: 'Roboto';
+
+  &.successed{
+    background-color: rgb(15,157,88);
+    border:  rgba(15,157,88, 1) solid 1px;
+  }
+
+  &.failed{
+      background-color: rgb(219,68,55);
+      border:  rgba(219,68,55, 1) solid 1px;
+  }
+  }

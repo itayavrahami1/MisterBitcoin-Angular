@@ -16,19 +16,20 @@ export class ContactFormValidator {
     }
 
     static vaildPhoneNumber(control: FormControl): ValidationResult {
-        // const phoneRegEx = new RegExp(`([+]?\\b\\d{1,2}[.-\\s]?)?[(\\s]?(\\d{1,3}){1}[)\s]?([-\\s]?\\d{1,4}){1,3}`);
+        // const phoneRegEx = new RegExp(`^[+]*\\d{1,3}\\s{0,1}[(]{0,1}[0-9]{1,4}[)]{0,1}\\s{0,1}[-\\s\\.0-9]*$`);
+        // TODO -maybe add minlength to the phonr number test
         const phoneRegEx = new RegExp(`(\\d){1,13}`);
-        
-        if (control.value != "" && phoneRegEx.test(control.value)) {return { "vaildPhoneNumber": true }};
-        return { "vaildPhoneNumber": false }
+        if (control.value != "" && phoneRegEx.test(control.value)) {
+            return { "vaildPhoneNumber": true }
+        }
+        return null
+        // return { "vaildPhoneNumber": false }
     }
 
-    static vaildemail(control: FormControl): ValidationResult {
-        const emailRegEx = new RegExp(`[a-z]{1,15}[@][a-z]{1,8}[.][a-z]{2,4}`);
-        console.log(emailRegEx,emailRegEx.test(control.value));
-        if (control.value != "" && emailRegEx.test(control.value)) {return { "vaildEmail": true }};
-        return null
-        // return { "vaildEmail": false }
+    static vaildEmail(control: FormControl): ValidationResult {
+        const emailRegExp = new RegExp(`^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$`);
+        if (control.value != "" && emailRegExp.test(control.value)) {return { "vaildEmail": true }};
+        return { "vaildEmail": false }
     }
 
     // static usernameTaken(control: AbstractControl): Promise<ValidationResult> {
